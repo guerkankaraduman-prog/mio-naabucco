@@ -1,16 +1,105 @@
-# React + Vite
+# Pizzeria Mio Naabucco — Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+High-end Restaurant-Website gebaut mit **Vite + React**, deployed auf **Vercel**.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- ⚡ **Vite** — Build Tool
+- ⚛️ **React 18** — UI Framework
+- 🔀 **React Router v6** — Client-Side Routing
+- 🎨 CSS Custom Properties — Design System
+- ☁️ **Vercel** — Hosting & Deployment
 
-## React Compiler
+## Lokale Entwicklung
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+# Dependencies installieren
+npm install
 
-## Expanding the ESLint configuration
+# Dev-Server starten
+npm run dev
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Produktions-Build
+npm run build
+
+# Build-Vorschau
+npm run preview
+```
+
+## 🚀 Deployment auf Vercel (GitHub)
+
+### Methode 1: Vercel CLI (empfohlen)
+
+```bash
+npm i -g vercel
+vercel login
+vercel --prod
+```
+
+### Methode 2: GitHub + Vercel (automatisch)
+
+1. **GitHub Repo erstellen:**
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit: Mio Naabucco Website"
+   git remote add origin https://github.com/DEIN-USER/mio-naabucco.git
+   git push -u origin main
+   ```
+
+2. **Vercel verbinden:**
+   - Gehe zu [vercel.com/new](https://vercel.com/new)
+   - „Import Git Repository" → Dein GitHub Repo auswählen
+   - Framework: **Vite** (wird automatisch erkannt)
+   - **Deploy** klicken
+
+3. **Fertig!** Jeder `git push` auf `main` löst automatisch ein neues Deployment aus.
+
+### Vercel Konfiguration
+
+Die `vercel.json` ist bereits konfiguriert für:
+- SPA Routing (alle Routen → `index.html`)
+- Asset Caching (1 Jahr für `/assets/`)
+
+## Projektstruktur
+
+```
+mio-naabucco/
+├── public/
+│   └── favicon.svg
+├── src/
+│   ├── components/
+│   │   ├── Navbar.jsx / .css
+│   │   └── Footer.jsx / .css
+│   ├── pages/
+│   │   ├── Home.jsx / .css
+│   │   ├── Speisekarte.jsx / .css
+│   │   ├── Kontakt.jsx / .css
+│   │   ├── Anfahrt.jsx / .css
+│   │   └── Impressum.jsx / .css
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+├── index.html
+├── vite.config.js
+├── vercel.json
+└── package.json
+```
+
+## Seiten
+
+| Route           | Seite                      |
+|-----------------|----------------------------|
+| `/`             | Startseite (Hero, Galerie) |
+| `/speisekarte`  | Vollständige Speisekarte   |
+| `/kontakt`      | Öffnungszeiten + Formular  |
+| `/anfahrt`      | Google Maps Einbettung     |
+| `/impressum`    | Impressum & Datenschutz    |
+
+## Anpassen
+
+- **Öffnungszeiten** → `src/pages/Kontakt.jsx` (HOURS Array)
+- **Speisekarte** → `src/pages/Speisekarte.jsx` (MENU Array)  
+- **Farben** → `src/index.css` (CSS Variables unter `:root`)
+- **Bilder** → Unsplash-Links durch eigene ersetzen
+- **Telefonnummer** → Globale Suche nach `+499435307373`

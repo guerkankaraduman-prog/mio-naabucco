@@ -1,0 +1,33 @@
+.impressum-content {
+  max-width: 780px;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+.impressum-block {
+  padding: 2.5rem 3rem;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+}
+.impressum-block p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: .75rem;
+}
+.impressum-block p:last-child { margin-bottom: 0; }
+.impressum-block strong { color: var(--cream-dim); }
+.impressum-block a { color: var(--gold-dim); }
+.impressum-block a:hover { color: var(--gold); }
+.impressum-h3 {
+  font-family: var(--font-ui);
+  font-size: .75rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: .6rem;
+}
+
+@media (max-width: 600px) {
+  .impressum-block { padding: 1.8rem 1.5rem; }
+}
