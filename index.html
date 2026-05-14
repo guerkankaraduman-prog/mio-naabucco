@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<title>Mio Naabucco – Ristorante Pizzeria Schwarzenfeld</title>
+<title>Ristorante Bella Italia – Pizza & Pasta zum Mitnehmen</title>
 
-<meta name="description" content="Mio Naabucco – Italienisches Restaurant in Schwarzenfeld. Pizza, Pasta, Fleisch- & Fischgerichte.">
-<meta name="keywords" content="Restaurant Schwarzenfeld, Pizza, Italienisches Restaurant, Mio Naabucco, Pizzeria Bayern">
+<meta name="description" content="Italienisches Restaurant mit Pizza & Pasta. Jetzt bestellen oder zum Mitnehmen abholen. Frisch, schnell und authentisch italienisch.">
+<meta name="keywords" content="Pizza, Italienisches Restaurant, Takeaway, Lieferung, Pasta, Ristorante">
 
 <style>
 body{
@@ -19,30 +19,40 @@ body{
 
 /* HERO */
 .hero{
-  height:90vh;
+  height:100vh;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
   text-align:center;
-  background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
-  url('hero.jpg') center/cover;
+  background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+  url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c') center/cover;
   padding:20px;
 }
 
-.hero img{
-  width:160px;
-  margin-bottom:20px;
-}
-
 .hero h1{
-  font-size:48px;
+  font-size:50px;
   margin:0;
 }
 
 .hero p{
   opacity:0.8;
-  margin-top:10px;
+  margin:10px 0 20px;
+}
+
+/* CTA BUTTON */
+.btn{
+  background:#f5c542;
+  color:black;
+  padding:15px 25px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:scale(1.05);
 }
 
 /* NAV */
@@ -54,7 +64,6 @@ nav{
   justify-content:center;
   gap:20px;
   padding:15px;
-  z-index:10;
 }
 
 nav a{
@@ -64,7 +73,6 @@ nav a{
 }
 
 nav a:hover{
-  opacity:1;
   color:#f5c542;
 }
 
@@ -76,37 +84,43 @@ section{
 }
 
 h2{
+  color:#f5c542;
   border-bottom:1px solid #333;
   padding-bottom:10px;
-  margin-bottom:30px;
-  color:#f5c542;
+  margin-bottom:20px;
 }
 
 /* MENU */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
   gap:15px;
 }
 
-.item{
+.card{
   background:#1a1a1a;
   padding:15px;
   border-radius:12px;
-  transition:0.3s;
 }
 
-.item:hover{
-  transform:scale(1.03);
-  background:#222;
+/* ORDER BOX */
+.order-box{
+  background:#111;
+  padding:20px;
+  border-radius:12px;
+  text-align:center;
 }
 
 /* FOOTER */
 footer{
-  text-align:center;
-  padding:40px;
   background:#111;
+  padding:40px;
+  text-align:center;
   opacity:0.8;
+}
+.small{
+  font-size:12px;
+  opacity:0.6;
 }
 </style>
 </head>
@@ -115,91 +129,81 @@ footer{
 
 <!-- HERO -->
 <div class="hero">
-  <img src="logo.png" alt="Mio Naabucco Logo">
-  <h1>Mio Naabucco</h1>
-  <p>Ristorante • Pizzeria • Schwarzenfeld</p>
+  <h1>Ristorante Bella Italia</h1>
+  <p>Pizza • Pasta • Antipasti • Zum Mitnehmen & Abholen</p>
+
+  <a class="btn" href="#order">🍕 Jetzt bestellen</a>
 </div>
 
 <!-- NAV -->
 <nav>
-  <a href="#pizza">Pizza</a>
-  <a href="#pasta">Pasta</a>
-  <a href="#fleisch">Fleisch</a>
-  <a href="#fisch">Fisch</a>
-  <a href="#salate">Salate</a>
+  <a href="#menu">Speisekarte</a>
+  <a href="#order">Bestellen</a>
+  <a href="#about">Über uns</a>
+  <a href="#impressum">Impressum</a>
 </nav>
 
-<!-- PIZZA -->
-<section id="pizza">
-<h2>🍕 Pizza</h2>
+<!-- MENU -->
+<section id="menu">
+<h2>🍝 Speisekarte</h2>
+
 <div class="grid">
-
-<div class="item">Margherita</div>
-<div class="item">Salami</div>
-<div class="item">Capricciosa</div>
-<div class="item">Diavolo</div>
-<div class="item">Quattro Formaggi</div>
-<div class="item">Parma</div>
-<div class="item">Mio Naabucco Spezial</div>
-
+  <div class="card">Margherita – Tomate, Käse</div>
+  <div class="card">Salami – Klassische Pizza</div>
+  <div class="card">Diavolo – Scharf</div>
+  <div class="card">Quattro Formaggi</div>
+  <div class="card">Carbonara</div>
+  <div class="card">Bolognese</div>
+  <div class="card">Lasagne</div>
+  <div class="card">Insalata Tonno</div>
 </div>
 </section>
 
-<!-- PASTA -->
-<section id="pasta">
-<h2>🍝 Pasta</h2>
-<div class="grid">
+<!-- ORDER -->
+<section id="order">
+<h2>📲 Jetzt bestellen / Mitnehmen</h2>
 
-<div class="item">Spaghetti Bolognese</div>
-<div class="item">Carbonara</div>
-<div class="item">Frutti di Mare</div>
-<div class="item">Lasagne</div>
-<div class="item">Tagliatelle Salmone</div>
+<div class="order-box">
+  <p>Rufe uns an oder schreibe direkt WhatsApp:</p>
 
+  <a class="btn" href="tel:+49123456789">📞 Anrufen</a>
+  <a class="btn" href="https://wa.me/49123456789">💬 WhatsApp</a>
+
+  <p class="small">Abholung in 20–30 Minuten möglich</p>
 </div>
 </section>
 
-<!-- FLEISCH -->
-<section id="fleisch">
-<h2>🥩 Fleischgerichte</h2>
-<div class="grid">
-
-<div class="item">Schnitzel Wiener Art</div>
-<div class="item">Scaloppine Funghi</div>
-<div class="item">Rindersteak</div>
-<div class="item">Putenschnitzel Jägerart</div>
-
-</div>
+<!-- ABOUT -->
+<section id="about">
+<h2>🍕 Über uns</h2>
+<p>
+Wir sind ein italienisches Restaurant mit Leidenschaft für authentische Küche.
+Frische Zutaten, traditionelle Rezepte und schnelle Abholung stehen bei uns im Fokus.
+</p>
 </section>
 
-<!-- FISCH -->
-<section id="fisch">
-<h2>🐟 Fischspezialitäten</h2>
-<div class="grid">
+<!-- IMPRESSUM -->
+<section id="impressum">
+<h2>⚖️ Impressum</h2>
 
-<div class="item">Calamari</div>
-<div class="item">Scampi vom Grill</div>
-<div class="item">Fischplatte</div>
+<p>
+Ristorante Bella Italia<br>
+Musterstraße 1<br>
+12345 Musterstadt<br><br>
 
-</div>
-</section>
+Telefon: +49 123 456789<br>
+E-Mail: info@bella-italia.de
+</p>
 
-<!-- SALATE -->
-<section id="salate">
-<h2>🥗 Salate</h2>
-<div class="grid">
-
-<div class="item">Insalata Tonno</div>
-<div class="item">Insalata Chef</div>
-<div class="item">Insalata Milano</div>
-
-</div>
+<p class="small">
+Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV: Inhaber
+</p>
 </section>
 
 <!-- FOOTER -->
 <footer>
-<p>📍 Mio Naabucco – Badeanger 18, Schwarzenfeld</p>
-<p>🍕 Italienische Küche • Pizza • Pasta • Fisch • Fleisch</p>
+<p>© 2026 Ristorante Bella Italia</p>
+<p class="small">Pizza • Pasta • Leidenschaft</p>
 </footer>
 
 </body>
