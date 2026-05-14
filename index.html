@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Mio Naabucco – Ristorante Pizzeria Schwarzenfeld</title>
 
-<meta name="description" content="Mio Naabucco – Italienisches Restaurant in Schwarzenfeld. Pizza, Pasta, Fleischgerichte & Fischspezialitäten im Herzen der Oberpfalz.">
-<meta name="keywords" content="Restaurant Schwarzenfeld, Pizza Schwarzenfeld, Italienisches Restaurant, Mio Naabucco">
+<meta name="description" content="Mio Naabucco – Italienisches Restaurant in Schwarzenfeld. Pizza, Pasta, Fleisch- & Fischgerichte.">
+<meta name="keywords" content="Restaurant Schwarzenfeld, Pizza, Italienisches Restaurant, Mio Naabucco, Pizzeria Bayern">
 
 <style>
 body{
@@ -17,31 +17,60 @@ body{
   color:white;
 }
 
-header{
+/* HERO */
+.hero{
   height:90vh;
-  background:url('/hero.jpg') center/cover;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
   text-align:center;
+  background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+  url('hero.jpg') center/cover;
+  padding:20px;
 }
 
-header img{
+.hero img{
   width:160px;
   margin-bottom:20px;
 }
 
-header h1{
+.hero h1{
   font-size:48px;
+  margin:0;
 }
 
-header p{
+.hero p{
+  opacity:0.8;
+  margin-top:10px;
+}
+
+/* NAV */
+nav{
+  position:sticky;
+  top:0;
+  background:#111;
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  padding:15px;
+  z-index:10;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
   opacity:0.8;
 }
 
+nav a:hover{
+  opacity:1;
+  color:#f5c542;
+}
+
+/* SECTIONS */
 section{
-  padding:80px 20px;
+  padding:70px 20px;
   max-width:1000px;
   margin:auto;
 }
@@ -50,9 +79,11 @@ h2{
   border-bottom:1px solid #333;
   padding-bottom:10px;
   margin-bottom:30px;
+  color:#f5c542;
 }
 
-.menu-grid{
+/* MENU */
+.grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:15px;
@@ -61,14 +92,16 @@ h2{
 .item{
   background:#1a1a1a;
   padding:15px;
-  border-radius:10px;
+  border-radius:12px;
+  transition:0.3s;
 }
 
-.price{
-  color:#f5c542;
-  float:right;
+.item:hover{
+  transform:scale(1.03);
+  background:#222;
 }
 
+/* FOOTER */
 footer{
   text-align:center;
   padding:40px;
@@ -80,32 +113,42 @@ footer{
 
 <body>
 
-<header>
-  <img src="logo.png" alt="Mio Naabucco Logo"/>
+<!-- HERO -->
+<div class="hero">
+  <img src="logo.png" alt="Mio Naabucco Logo">
   <h1>Mio Naabucco</h1>
-  <p>Ristorante • Pizzeria • Biergarten • Schwarzenfeld</p>
-</header>
+  <p>Ristorante • Pizzeria • Schwarzenfeld</p>
+</div>
 
-<!-- 🍕 PIZZA -->
-<section>
+<!-- NAV -->
+<nav>
+  <a href="#pizza">Pizza</a>
+  <a href="#pasta">Pasta</a>
+  <a href="#fleisch">Fleisch</a>
+  <a href="#fisch">Fisch</a>
+  <a href="#salate">Salate</a>
+</nav>
+
+<!-- PIZZA -->
+<section id="pizza">
 <h2>🍕 Pizza</h2>
-<div class="menu-grid">
+<div class="grid">
 
-<div class="item">Margherita <span class="price">€</span><br>Tomatensoße, Käse</div>
-<div class="item">Salami <span class="price">€</span></div>
-<div class="item">Capricciosa <span class="price">€</span></div>
-<div class="item">Diavolo <span class="price">€</span></div>
-<div class="item">Quattro Formaggi <span class="price">€</span></div>
-<div class="item">Parma <span class="price">€</span></div>
-<div class="item">Mio Naabucco <span class="price">€</span></div>
+<div class="item">Margherita</div>
+<div class="item">Salami</div>
+<div class="item">Capricciosa</div>
+<div class="item">Diavolo</div>
+<div class="item">Quattro Formaggi</div>
+<div class="item">Parma</div>
+<div class="item">Mio Naabucco Spezial</div>
 
 </div>
 </section>
 
-<!-- 🍝 PASTA -->
-<section>
+<!-- PASTA -->
+<section id="pasta">
 <h2>🍝 Pasta</h2>
-<div class="menu-grid">
+<div class="grid">
 
 <div class="item">Spaghetti Bolognese</div>
 <div class="item">Carbonara</div>
@@ -116,10 +159,10 @@ footer{
 </div>
 </section>
 
-<!-- 🥩 FLEISCH -->
-<section>
+<!-- FLEISCH -->
+<section id="fleisch">
 <h2>🥩 Fleischgerichte</h2>
-<div class="menu-grid">
+<div class="grid">
 
 <div class="item">Schnitzel Wiener Art</div>
 <div class="item">Scaloppine Funghi</div>
@@ -129,10 +172,10 @@ footer{
 </div>
 </section>
 
-<!-- 🐟 FISCH -->
-<section>
+<!-- FISCH -->
+<section id="fisch">
 <h2>🐟 Fischspezialitäten</h2>
-<div class="menu-grid">
+<div class="grid">
 
 <div class="item">Calamari</div>
 <div class="item">Scampi vom Grill</div>
@@ -141,10 +184,10 @@ footer{
 </div>
 </section>
 
-<!-- 🥗 SALATE -->
-<section>
+<!-- SALATE -->
+<section id="salate">
 <h2>🥗 Salate</h2>
-<div class="menu-grid">
+<div class="grid">
 
 <div class="item">Insalata Tonno</div>
 <div class="item">Insalata Chef</div>
@@ -153,10 +196,10 @@ footer{
 </div>
 </section>
 
-<!-- 📍 FOOTER -->
+<!-- FOOTER -->
 <footer>
-<p>Mio Naabucco • Badeanger 18 • Schwarzenfeld</p>
-<p>Italienische Küche • Pizza • Pasta • Fisch • Fleisch</p>
+<p>📍 Mio Naabucco – Badeanger 18, Schwarzenfeld</p>
+<p>🍕 Italienische Küche • Pizza • Pasta • Fisch • Fleisch</p>
 </footer>
 
 </body>
