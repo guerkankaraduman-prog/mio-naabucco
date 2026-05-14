@@ -1,4 +1,6 @@
-import { Link } from 'react-router-dom'
+// ✅ OPTIMIERT: react-router-dom → next/link | <img> → next/image
+import Link from 'next/link'          // ← FIX #1: war 'react-router-dom'
+import Image from 'next/image'        // ← FIX #2: neu – für optimierte Bilder
 import './Home.css'
 
 import logo from '../assets/images/mio-logo.webp'
@@ -54,7 +56,13 @@ export default function Home() {
         <div className="hero__bg" />
         <div className="hero__overlay" />
         <div className="hero__content">
-          <img src={LOGO} alt="Mio Naabucco" className="hero__logo fade-up fade-up-1" />
+          {/* ✅ FIX #3: <img> → <Image> mit statischem Import (kein width/height nötig) */}
+          <Image
+            src={LOGO}
+            alt="Mio Naabucco"
+            className="hero__logo fade-up fade-up-1"
+            priority  // Logo ist LCP-Element → sofort laden
+          />
           <div className="hero__divider fade-up fade-up-2">
             <span className="ornament"><span>✦</span></span>
           </div>
@@ -72,7 +80,8 @@ export default function Home() {
             <a href="tel:+499435307373" className="btn btn-primary">
               <span>☎ &nbsp;Jetzt Bestellen – 09435 307373</span>
             </a>
-            <Link to="/speisekarte" className="btn">
+            {/* ✅ FIX #4: to="..." → href="..." (next/link API) */}
+            <Link href="/speisekarte" className="btn">
               <span>Zur Speisekarte</span>
             </Link>
           </div>
@@ -116,20 +125,26 @@ export default function Home() {
             la dolce vita direkt zu sich nach Hause.
           </p>
           <div style={{ marginTop: '2.2rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <Link to="/speisekarte" className="btn">
+            <Link href="/speisekarte" className="btn">
               <span>Speisekarte ansehen</span>
             </Link>
-            <Link to="/kontakt" className="btn" style={{ borderColor: 'var(--border-light)', color: 'var(--text-muted)' }}>
+            <Link href="/kontakt" className="btn" style={{ borderColor: 'var(--border-light)', color: 'var(--text-muted)' }}>
               <span>Öffnungszeiten</span>
             </Link>
           </div>
         </div>
         <div className="intro__visual">
           <div className="intro__img-stack">
-            <img
-              src="https://le-cdn.website-editor.net/s/42ae64c6c51b42deaa92ed40b139c583/dms3rep/multi/opt/007-f7db0a51-1920w.png"
-              alt="Pizzeria Mio Naabucco"
-            />
+            {/* ✅ FIX #5: <img> → <Image> mit fill für responsive Darstellung */}
+            <div style={{ position: 'relative', width: '100%', aspectRatio: '4/3' }}>
+              <Image
+                src="https://le-cdn.website-editor.net/s/42ae64c6c51b42deaa92ed40b139c583/dms3rep/multi/opt/007-f7db0a51-1920w.png"
+                alt="Pizzeria Mio Naabucco"
+                fill
+                style={{ objectFit: 'cover' }}
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
             <div className="intro__badge">
               <span className="label">Seit</span>
               <span className="intro__badge-year">23+</span>
@@ -170,8 +185,18 @@ export default function Home() {
         </div>
         <div className="gallery-grid">
           {GALLERY.map((item) => (
-            <Link to="/speisekarte" key={item.label} className="gallery-item">
-              <img src={item.url} alt={item.label} loading="lazy" />
+            <Link href="/speisekarte" key={item.label} className="gallery-item">
+              {/* ✅ FIX #6: Alle Gallery-Bilder mit next/image + lazy loading */}
+              <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+                <Image
+                  src={item.url}
+                  alt={item.label}
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  loading="lazy"
+                />
+              </div>
               <div className="gallery-item__overlay">
                 <h3 className="heading-2">{item.label}</h3>
                 <p className="label" style={{ color: 'var(--gold-light)', marginTop: '.4rem' }}>
@@ -238,7 +263,7 @@ export default function Home() {
                 </a>
               </div>
               <div style={{ marginTop: '2rem' }}>
-                <Link to="/anfahrt" style={{ fontFamily: 'var(--font-ui)', fontSize: '.75rem', letterSpacing: '.12em', color: 'var(--gold-dim)', textDecoration: 'none', textTransform: 'uppercase' }}>
+                <Link href="/anfahrt" style={{ fontFamily: 'var(--font-ui)', fontSize: '.75rem', letterSpacing: '.12em', color: 'var(--gold-dim)', textDecoration: 'none', textTransform: 'uppercase' }}>
                   Anfahrt & Adresse →
                 </Link>
               </div>
