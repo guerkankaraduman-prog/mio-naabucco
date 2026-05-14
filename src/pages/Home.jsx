@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom'
 import './Home.css'
 
-const LOGO = 'https://le-cdn.website-editor.net/s/42ae64c6c51b42deaa92ed40b139c583/dms3rep/multi/opt/MIO_NAABUCCO_WHITE_LOGO-dbae7412-1920w.png'
+import logo from '../assets/images/mio-logo.webp'
+
+const LOGO = logo
 
 const GALLERY = [
   {
