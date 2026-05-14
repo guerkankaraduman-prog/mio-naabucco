@@ -1,272 +1,184 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Dolce Vita Restaurant</title>
+  <style>
+    :root {
+      --primary: #111;
+      --accent: #c9a227;
+      --light: #f7f7f7;
+      --text: #333;
+    }
 
-<title>Mio Naabucco | Ristorante Pizzeria Luxury Experience</title>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;600&display=swap');
+    body {
+      background: var(--light);
+      color: var(--text);
+    }
 
-:root{
-  --gold:#c9a24e;
-  --bg:#0b0b0d;
-  --card:#141416;
-}
+    header {
+      background: url('https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c') center/cover no-repeat;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
 
-*{margin:0;padding:0;box-sizing:border-box;}
+    header::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+    }
 
-body{
-  background:var(--bg);
-  color:white;
-  font-family:Inter;
-  overflow-x:hidden;
-}
+    .hero {
+      position: relative;
+      z-index: 2;
+    }
 
-/* HERO */
-.hero{
-  height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  background:
-    radial-gradient(circle at top, rgba(201,162,78,0.2), transparent 60%),
-    url('https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba') center/cover;
-  position:relative;
-}
+    h1 {
+      font-size: 4rem;
+      letter-spacing: 2px;
+    }
 
-.overlay{
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.6);
-}
+    p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
 
-.hero-content{
-  position:relative;
-  z-index:2;
-  animation:fadeUp 1.2s ease;
-}
+    .btn {
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: var(--accent);
+      color: black;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
 
-.hero h1{
-  font-family:"Playfair Display";
-  font-size:64px;
-  letter-spacing:2px;
-}
+    .btn:hover {
+      background: #b08d1e;
+    }
 
-.hero p{
-  opacity:0.8;
-  margin:15px 0;
-}
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 50px;
+      background: rgba(0,0,0,0.8);
+      position: sticky;
+      top: 0;
+      color: white;
+    }
 
-/* BUTTON */
-.btn{
-  background:var(--gold);
-  color:black;
-  padding:14px 28px;
-  border-radius:40px;
-  border:none;
-  cursor:pointer;
-  font-weight:600;
-  transition:0.3s;
-}
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+    }
 
-.btn:hover{
-  transform:scale(1.05);
-}
+    section {
+      padding: 80px 10%;
+    }
 
-/* NAV */
-nav{
-  position:fixed;
-  top:0;
-  width:100%;
-  display:flex;
-  justify-content:center;
-  gap:25px;
-  padding:15px;
-  background:rgba(0,0,0,0.6);
-  backdrop-filter:blur(10px);
-  z-index:100;
-}
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
 
-nav a{
-  color:white;
-  text-decoration:none;
-  font-size:14px;
-  opacity:0.7;
-}
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
 
-nav a:hover{color:var(--gold);opacity:1;}
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 30px;
+    }
 
-/* SECTIONS */
-section{
-  padding:100px 20px;
-  max-width:1100px;
-  margin:auto;
-}
-
-h2{
-  font-family:"Playfair Display";
-  color:var(--gold);
-  font-size:34px;
-  margin-bottom:25px;
-}
-
-/* MENU */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:15px;
-}
-
-.card{
-  background:var(--card);
-  padding:18px;
-  border-radius:14px;
-  transition:0.4s;
-  border:1px solid rgba(255,255,255,0.05);
-}
-
-.card:hover{
-  transform:translateY(-5px);
-  border-color:rgba(201,162,78,0.4);
-}
-
-/* BOOKING */
-.booking{
-  background:linear-gradient(145deg,#141416,#0f0f12);
-  padding:40px;
-  border-radius:18px;
-  text-align:center;
-  border:1px solid rgba(201,162,78,0.2);
-}
-
-input,select{
-  width:100%;
-  padding:12px;
-  margin:10px 0;
-  border-radius:10px;
-  border:none;
-  outline:none;
-}
-
-/* MODAL */
-.modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.7);
-  justify-content:center;
-  align-items:center;
-  z-index:200;
-}
-
-.modal-box{
-  background:#141416;
-  padding:30px;
-  border-radius:16px;
-  width:350px;
-  animation:zoom 0.4s ease;
-}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:40px;
-  opacity:0.6;
-  font-size:12px;
-}
-
-/* ANIMATIONS */
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(30px);}
-  to{opacity:1;transform:translateY(0);}
-}
-
-@keyframes zoom{
-  from{transform:scale(0.8);opacity:0;}
-  to{transform:scale(1);opacity:1;}
-}
-</style>
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
-
 <body>
 
-<nav>
-<a href="#menu">Menü</a>
-<a href="#booking">Reservierung</a>
-<a onclick="openModal()">Jetzt buchen</a>
-</nav>
+  <nav>
+    <div><strong>La Dolce Vita</strong></div>
+    <div>
+      <a href="#home">Home</a>
+      <a href="#menu">Menü</a>
+      <a href="#about">Über uns</a>
+      <a href="#contact">Kontakt</a>
+    </div>
+  </nav>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="overlay"></div>
-  <div class="hero-content">
-    <h1>Mio Naabucco</h1>
-    <p>Michelin-Style Italian Dining Experience</p>
-    <button class="btn" onclick="openModal()">🍷 Tisch reservieren</button>
-  </div>
-</div>
+  <header id="home">
+    <div class="hero">
+      <h1 contenteditable="true">La Dolce Vita</h1>
+      <p contenteditable="true">Authentische italienische Küche im Herzen deiner Stadt</p>
+      <button class="btn" contenteditable="true">Jetzt Reservieren</button>
+    </div>
+  </header>
 
-<!-- MENU -->
-<section id="menu">
-<h2>🍝 Signatur Menü</h2>
+  <section id="menu">
+    <h2 contenteditable="true">Unsere Speisekarte</h2>
+    <div class="menu">
+      <div class="card" contenteditable="true">
+        <h3>Pizza Margherita</h3>
+        <p>Tomate, Mozzarella, Basilikum</p>
+        <strong>€12</strong>
+      </div>
+      <div class="card" contenteditable="true">
+        <h3>Pasta Carbonara</h3>
+        <p>Speck, Ei, Parmesan</p>
+        <strong>€14</strong>
+      </div>
+      <div class="card" contenteditable="true">
+        <h3>Risotto ai Funghi</h3>
+        <p>Steinpilze, Reis, Weißwein</p>
+        <strong>€16</strong>
+      </div>
+    </div>
+  </section>
 
-<div class="grid">
+  <section id="about">
+    <h2 contenteditable="true">Über uns</h2>
+    <p contenteditable="true">
+      Wir sind ein familiengeführtes italienisches Restaurant mit Leidenschaft für frische Zutaten und traditionelle Rezepte.
+    </p>
+  </section>
 
-<div class="card">Margherita di Bufala</div>
-<div class="card">Trüffel Pasta</div>
-<div class="card">Risotto ai Funghi</div>
-<div class="card">Bistecca Fiorentina</div>
-<div class="card">Tagliatelle Salmone</div>
-<div class="card">Pizza Diavolo Deluxe</div>
+  <section id="contact">
+    <h2 contenteditable="true">Kontakt</h2>
+    <input type="text" placeholder="Name" />
+    <input type="email" placeholder="Email" />
+    <textarea placeholder="Nachricht"></textarea>
+    <button class="btn">Senden</button>
+  </section>
 
-</div>
-</section>
-
-<!-- BOOKING -->
-<section id="booking">
-<h2>📅 Reservierung</h2>
-
-<div class="booking">
-  <input placeholder="Name">
-  <input placeholder="Telefon">
-  <select>
-    <option>2 Personen</option>
-    <option>3–4 Personen</option>
-    <option>5–8 Personen</option>
-  </select>
-
-  <input type="date">
-
-  <button class="btn" onclick="openModal()">Reservierung anfragen</button>
-</div>
-</section>
-
-<!-- MODAL -->
-<div class="modal" id="modal">
-  <div class="modal-box">
-    <h3>🍷 Tisch reserviert</h3>
-    <p>Wir haben deine Anfrage erhalten.</p>
-    <button class="btn" onclick="closeModal()">OK</button>
-  </div>
-</div>
-
-<!-- FOOTER -->
-<footer>
-© 2026 Mio Naabucco • Luxury Italian Dining Experience
-</footer>
-
-<script>
-function openModal(){
-  document.getElementById("modal").style.display="flex";
-}
-
-function closeModal(){
-  document.getElementById("modal").style.display="none";
-}
-</script>
+  <footer>
+    <p contenteditable="true">© 2026 La Dolce Vita Restaurant. Alle Rechte vorbehalten.</p>
+  </footer>
 
 </body>
 </html>
