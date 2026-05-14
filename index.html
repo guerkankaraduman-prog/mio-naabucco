@@ -1,21 +1,221 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Pizzeria Mio Naabucco – Authentische italienische Küche seit über 23 Jahren. Frische Pizza, Pasta und Spezialitäten zum Mitnehmen in Schwarzenfeld." />
-    <meta name="keywords" content="Pizzeria Schwarzenfeld, Italienisches Restaurant, Pizza zum Mitnehmen, Mio Naabucco, Pasta, Speisekarte" />
-    <meta property="og:title" content="Pizzeria Mio Naabucco – Schwarzenfeld" />
-    <meta property="og:description" content="Authentische italienische Küche seit über 23 Jahren. Jetzt bestellen: 09435 / 30 73 73" />
-    <meta property="og:type" content="restaurant" />
-    <title>Mio Naabucco – Ristorante & Pizzeria Schwarzenfeld</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mio Naabucco – Speisekarte</title>
+<style>
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial;
+    background:#0b0b0c;
+    color:#fff;
+  }
+
+  .glow{
+    position:fixed;
+    top:-200px;
+    left:50%;
+    transform:translateX(-50%);
+    width:700px;
+    height:700px;
+    background:rgba(199,168,109,0.18);
+    filter:blur(140px);
+    border-radius:50%;
+    pointer-events:none;
+  }
+
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    backdrop-filter:blur(20px);
+    background:rgba(0,0,0,0.65);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+
+  .nav{
+    max-width:1100px;
+    margin:auto;
+    padding:18px 24px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+
+  .logo{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,0.12);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:10px;
+  }
+
+  .cta{
+    background:#C7A86D;
+    color:black;
+    padding:10px 16px;
+    border-radius:999px;
+    font-weight:600;
+    text-decoration:none;
+  }
+
+  .hero{
+    max-width:1000px;
+    margin:auto;
+    padding:90px 24px 40px;
+    text-align:center;
+  }
+
+  .hero h1{
+    font-size:52px;
+    letter-spacing:-1px;
+    margin:0;
+  }
+
+  .hero h1 span{color:#C7A86D;}
+
+  .hero p{
+    color:#aaa;
+    max-width:600px;
+    margin:20px auto;
+    line-height:1.6;
+  }
+
+  .menu{
+    max-width:900px;
+    margin:auto;
+    padding:40px 24px;
+  }
+
+  .section{
+    margin-bottom:60px;
+  }
+
+  .section h2{
+    font-size:22px;
+    border-left:3px solid #C7A86D;
+    padding-left:10px;
+    margin-bottom:18px;
+  }
+
+  .item{
+    display:flex;
+    justify-content:space-between;
+    padding:14px 0;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+
+  .item h3{margin:0;font-size:16px;}
+  .item p{margin:4px 0 0;font-size:13px;color:#999;}
+  .price{color:#C7A86D;font-weight:600;}
+
+  footer{
+    text-align:center;
+    padding:40px 20px;
+    border-top:1px solid rgba(255,255,255,0.08);
+    color:#777;
+  }
+
+  @media(max-width:768px){
+    .hero h1{font-size:38px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="glow"></div>
+
+<header>
+  <div class="nav">
+    <div class="brand">
+      <div class="logo">LOGO</div>
+      <div>
+        <strong>Mio Naabucco</strong><br/>
+        <small style="color:#999">Authentic Italian Cuisine</small>
+      </div>
+    </div>
+
+    <a class="cta" href="tel:+491234567890">Jetzt anrufen</a>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>La Dolce Vita <span>Experience</span></h1>
+  <p>Traditionelle italienische Küche mit echter Handwerkskunst und Premium Zutaten.</p>
+</section>
+
+<section class="menu">
+
+  <div class="section">
+    <h2>Pizza</h2>
+    <div class="item"><div><h3>Margherita</h3><p>Tomatensoße, Käse</p></div></div>
+    <div class="item"><div><h3>Schinken</h3><p>Tomatensoße, Käse, Vorderschinken</p></div></div>
+    <div class="item"><div><h3>Salami</h3><p>Tomatensoße, Käse, Salami</p></div></div>
+    <div class="item"><div><h3>Speciale</h3><p>Salami, Champignon, Paprika, Peperoni</p></div></div>
+    <div class="item"><div><h3>Mix</h3><p>Salami, Schinken, Champignon, Paprika, Peperoni</p></div></div>
+    <div class="item"><div><h3>Deliziosa</h3><p>Salami, Schinken, Champignon</p></div></div>
+    <div class="item"><div><h3>Hawaii</h3><p>Schinken, Ananas</p></div></div>
+    <div class="item"><div><h3>Stagioni</h3><p>Artischocken, Champignon, Schinken, Salami</p></div></div>
+    <div class="item"><div><h3>Calzone</h3><p>Schinken, Salami, Ei, Champignon</p></div></div>
+    <div class="item"><div><h3>Tonno</h3><p>Thunfisch, Zwiebeln</p></div></div>
+    <div class="item"><div><h3>Capricciosa</h3><p>Schinken, Salami, Sardellen, Zwiebeln</p></div></div>
+    <div class="item"><div><h3>Quattro Formaggi</h3><p>4 Käsesorten</p></div></div>
+    <div class="item"><div><h3>Parma</h3><p>Mozzarella, Parmaschinken, Rucola</p></div></div>
+    <div class="item"><div><h3>Diavolo</h3><p>Scharfe Salami, Peperoni</p></div></div>
+  </div>
+
+  <div class="section">
+    <h2>Nudelgerichte</h2>
+    <div class="item"><div><h3>Spaghetti Bolognese</h3><p>Hackfleischsoße</p></div></div>
+    <div class="item"><div><h3>Carbonara</h3><p>Sahne, Schinken, Ei</p></div></div>
+    <div class="item"><div><h3>Frutti di Mare</h3><p>Meeresfrüchte</p></div></div>
+    <div class="item"><div><h3>Lasagne</h3><p>Überbacken mit Hackfleischsoße</p></div></div>
+    <div class="item"><div><h3>Arrabbiata</h3><p>Scharfe Tomatensoße</p></div></div>
+    <div class="item"><div><h3>Tagliatelle Salmone</h3><p>Lachs, Sahnesoße</p></div></div>
+  </div>
+
+  <div class="section">
+    <h2>Fleischgerichte</h2>
+    <div class="item"><div><h3>Schnitzel Wiener Art</h3><p>mit Beilage & Salat</p></div></div>
+    <div class="item"><div><h3>Scaloppine Funghi</h3><p>Champignonrahmsoße</p></div></div>
+    <div class="item"><div><h3>Rumpsteak</h3><p>vom Grill</p></div></div>
+    <div class="item"><div><h3>Putenschnitzel</h3><p>verschiedene Varianten</p></div></div>
+  </div>
+
+  <div class="section">
+    <h2>Salate</h2>
+    <div class="item"><div><h3>Insalata Mista</h3><p>Gemischter Salat</p></div></div>
+    <div class="item"><div><h3>Insalata Tonno</h3><p>Thunfisch, Zwiebeln</p></div></div>
+    <div class="item"><div><h3>Insalata Italia</h3><p>Schinken, Thunfisch, Ei</p></div></div>
+    <div class="item"><div><h3>Insalata Chef</h3><p>Putenstreifen, Mozzarella</p></div></div>
+  </div>
+
+  <div class="section">
+    <h2>Vorspeisen</h2>
+    <div class="item"><div><h3>Bruschetta</h3><p>Tomaten, Basilikum</p></div></div>
+    <div class="item"><div><h3>Antipasti Mix</h3><p>für 2 Personen</p></div></div>
+    <div class="item"><div><h3>Pizzabrot</h3><p>Olivenöl, Oregano</p></div></div>
+  </div>
+
+  <div class="section">
+    <h2>Dessert</h2>
+    <div class="item"><div><h3>Tiramisu</h3><p>klassisch italienisch</p></div></div>
+    <div class="item"><div><h3>Crêpes</h3><p>mit Sahne & Kirschen</p></div></div>
+  </div>
+
+</section>
+
+<footer>© 2026 Mio Naabucco – La Dolce Vita</footer>
+
+</body>
 </html>
