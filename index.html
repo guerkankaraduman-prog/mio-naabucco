@@ -4,240 +4,269 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<title>Ristorante Pizzeria Mio Naabucco</title>
-
-<meta name="description" content="Italienisches Restaurant mit Pizza, Pasta, Fleisch- und Fischgerichten. Frisch, authentisch & hochwertig im Herzen von Schwarzenfeld.">
+<title>Mio Naabucco | Ristorante Pizzeria Luxury Experience</title>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;600&display=swap');
+
 :root{
-  --gold:#f5c542;
-  --bg:#0e0e0e;
-  --card:#1a1a1a;
+  --gold:#c9a24e;
+  --bg:#0b0b0d;
+  --card:#141416;
 }
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
   background:var(--bg);
   color:white;
+  font-family:Inter;
+  overflow-x:hidden;
 }
 
 /* HERO */
 .hero{
   height:100vh;
-  background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.9)),
-  url('https://images.unsplash.com/photo-1540189549336-e6e99c3679fe') center/cover;
   display:flex;
-  flex-direction:column;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
   text-align:center;
-  padding:20px;
+  background:
+    radial-gradient(circle at top, rgba(201,162,78,0.2), transparent 60%),
+    url('https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba') center/cover;
+  position:relative;
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  animation:fadeUp 1.2s ease;
 }
 
 .hero h1{
-  font-size:60px;
+  font-family:"Playfair Display";
+  font-size:64px;
   letter-spacing:2px;
 }
 
 .hero p{
   opacity:0.8;
-  margin:10px 0 20px;
+  margin:15px 0;
 }
 
+/* BUTTON */
 .btn{
   background:var(--gold);
   color:black;
-  padding:14px 26px;
-  border-radius:30px;
-  text-decoration:none;
-  font-weight:bold;
+  padding:14px 28px;
+  border-radius:40px;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:scale(1.05);
 }
 
 /* NAV */
 nav{
-  position:sticky;
+  position:fixed;
   top:0;
-  background:#111;
+  width:100%;
   display:flex;
   justify-content:center;
-  gap:20px;
+  gap:25px;
   padding:15px;
-  z-index:10;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+  z-index:100;
 }
 
 nav a{
   color:white;
   text-decoration:none;
+  font-size:14px;
   opacity:0.7;
 }
 
-nav a:hover{
-  color:var(--gold);
-}
+nav a:hover{color:var(--gold);opacity:1;}
 
 /* SECTIONS */
 section{
-  padding:80px 20px;
+  padding:100px 20px;
   max-width:1100px;
   margin:auto;
 }
 
 h2{
+  font-family:"Playfair Display";
   color:var(--gold);
+  font-size:34px;
   margin-bottom:25px;
-  border-bottom:1px solid #333;
-  padding-bottom:10px;
 }
 
-/* GRID MENU */
+/* MENU */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:15px;
 }
 
 .card{
   background:var(--card);
-  padding:15px;
-  border-radius:12px;
-  transition:0.3s;
+  padding:18px;
+  border-radius:14px;
+  transition:0.4s;
+  border:1px solid rgba(255,255,255,0.05);
 }
 
 .card:hover{
-  transform:scale(1.03);
+  transform:translateY(-5px);
+  border-color:rgba(201,162,78,0.4);
 }
 
-/* ORDER BOX */
-.order{
-  text-align:center;
-  background:#111;
+/* BOOKING */
+.booking{
+  background:linear-gradient(145deg,#141416,#0f0f12);
   padding:40px;
-  border-radius:12px;
+  border-radius:18px;
+  text-align:center;
+  border:1px solid rgba(201,162,78,0.2);
 }
 
+input,select{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border-radius:10px;
+  border:none;
+  outline:none;
+}
+
+/* MODAL */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.7);
+  justify-content:center;
+  align-items:center;
+  z-index:200;
+}
+
+.modal-box{
+  background:#141416;
+  padding:30px;
+  border-radius:16px;
+  width:350px;
+  animation:zoom 0.4s ease;
+}
+
+/* FOOTER */
 footer{
   text-align:center;
   padding:40px;
-  background:#111;
-  opacity:0.7;
+  opacity:0.6;
+  font-size:12px;
 }
 
-.small{
-  font-size:12px;
-  opacity:0.6;
+/* ANIMATIONS */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+@keyframes zoom{
+  from{transform:scale(0.8);opacity:0;}
+  to{transform:scale(1);opacity:1;}
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
-  <h1>Mio Naabucco</h1>
-  <p>Ristorante • Pizzeria • Italienische Spezialitäten</p>
-  <a href="#order" class="btn">🍕 Jetzt bestellen</a>
-</div>
-
-<!-- NAV -->
 <nav>
-  <a href="#pizza">Pizza</a>
-  <a href="#pasta">Pasta</a>
-  <a href="#meat">Fleisch</a>
-  <a href="#fish">Fisch</a>
-  <a href="#salad">Salate</a>
-  <a href="#order">Bestellen</a>
+<a href="#menu">Menü</a>
+<a href="#booking">Reservierung</a>
+<a onclick="openModal()">Jetzt buchen</a>
 </nav>
 
-<!-- PIZZA -->
-<section id="pizza">
-<h2>🍕 Pizza</h2>
-<div class="grid">
-
-<div class="card">Margherita</div>
-<div class="card">Salami</div>
-<div class="card">Prosciutto</div>
-<div class="card">Capricciosa</div>
-<div class="card">Diavolo</div>
-<div class="card">Quattro Formaggi</div>
-<div class="card">Mio Naabucco Spezial</div>
-
+<!-- HERO -->
+<div class="hero">
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <h1>Mio Naabucco</h1>
+    <p>Michelin-Style Italian Dining Experience</p>
+    <button class="btn" onclick="openModal()">🍷 Tisch reservieren</button>
+  </div>
 </div>
-</section>
 
-<!-- PASTA -->
-<section id="pasta">
-<h2>🍝 Pasta</h2>
+<!-- MENU -->
+<section id="menu">
+<h2>🍝 Signatur Menü</h2>
+
 <div class="grid">
 
-<div class="card">Spaghetti Bolognese</div>
-<div class="card">Carbonara</div>
-<div class="card">Lasagne</div>
+<div class="card">Margherita di Bufala</div>
+<div class="card">Trüffel Pasta</div>
+<div class="card">Risotto ai Funghi</div>
+<div class="card">Bistecca Fiorentina</div>
 <div class="card">Tagliatelle Salmone</div>
-<div class="card">Penne Arrabiata</div>
+<div class="card">Pizza Diavolo Deluxe</div>
 
 </div>
 </section>
 
-<!-- FLEISCH -->
-<section id="meat">
-<h2>🥩 Fleischgerichte</h2>
-<div class="grid">
+<!-- BOOKING -->
+<section id="booking">
+<h2>📅 Reservierung</h2>
 
-<div class="card">Schnitzel Wiener Art</div>
-<div class="card">Scaloppine Funghi</div>
-<div class="card">Rindersteak</div>
-<div class="card">Putenschnitzel</div>
+<div class="booking">
+  <input placeholder="Name">
+  <input placeholder="Telefon">
+  <select>
+    <option>2 Personen</option>
+    <option>3–4 Personen</option>
+    <option>5–8 Personen</option>
+  </select>
 
+  <input type="date">
+
+  <button class="btn" onclick="openModal()">Reservierung anfragen</button>
 </div>
 </section>
 
-<!-- FISCH -->
-<section id="fish">
-<h2>🐟 Fisch</h2>
-<div class="grid">
-
-<div class="card">Calamari fritti</div>
-<div class="card">Scampi vom Grill</div>
-<div class="card">Fischplatte Mio Naabucco</div>
-
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <h3>🍷 Tisch reserviert</h3>
+    <p>Wir haben deine Anfrage erhalten.</p>
+    <button class="btn" onclick="closeModal()">OK</button>
+  </div>
 </div>
-</section>
-
-<!-- SALATE -->
-<section id="salad">
-<h2>🥗 Salate</h2>
-<div class="grid">
-
-<div class="card">Insalata Tonno</div>
-<div class="card">Insalata Chef</div>
-<div class="card">Insalata Mista</div>
-
-</div>
-</section>
-
-<!-- ORDER -->
-<section id="order">
-<h2>📲 Jetzt bestellen / Mitnehmen</h2>
-
-<div class="order">
-  <p>Ruf uns an oder bestelle direkt:</p>
-  <br>
-
-  <a class="btn" href="tel:+49123456789">📞 Anrufen</a>
-  <a class="btn" href="https://wa.me/49123456789">💬 WhatsApp</a>
-
-  <p class="small">Abholung in ca. 20–30 Minuten</p>
-</div>
-
-</section>
 
 <!-- FOOTER -->
 <footer>
-<p>📍 Mio Naabucco – Italienisches Restaurant</p>
-<p>🍝 Pizza • Pasta • Fleisch • Fisch</p>
-<p class="small">© 2026 Mio Naabucco</p>
+© 2026 Mio Naabucco • Luxury Italian Dining Experience
 </footer>
+
+<script>
+function openModal(){
+  document.getElementById("modal").style.display="flex";
+}
+
+function closeModal(){
+  document.getElementById("modal").style.display="none";
+}
+</script>
 
 </body>
 </html>
