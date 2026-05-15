@@ -7,32 +7,32 @@ const LOGO = logo
 
 const GALLERY = [
   {
-    url: 'https://le-cdn.website-editor.net/s/42ae64c6c51b42deaa92ed40b139c583/dms3rep/multi/opt/IMG_3101-51edb471-1920w.png',
+    url: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1920&q=80&auto=format&fit=crop',
     label: 'Unsere Pizzen',
     sublabel: 'Handgemacht & frisch belegt'
   },
   {
-    url: 'https://le-cdn.website-editor.net/s/42ae64c6c51b42deaa92ed40b139c583/dms3rep/multi/opt/spaghetti+bolognese-1920w.png',
+    url: 'https://images.unsplash.com/photo-1551183053-bf91798d2d87?w=1920&q=80&auto=format&fit=crop',
     label: 'Pasta',
     sublabel: 'Al dente – nach Art des Hauses'
   },
   {
-    url: 'https://le-cdn.website-editor.net/s/42ae64c6c51b42deaa92ed40b139c583/dms3rep/multi/opt/Salat_mio_naabucco-1920w.png',
+    url: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1920&q=80&auto=format&fit=crop',
     label: 'Insalate',
     sublabel: 'Frische Zutaten, täglich zubereitet'
   },
   {
-    url: 'https://le-cdn.website-editor.net/s/42ae64c6c51b42deaa92ed40b139c583/dms3rep/multi/opt/TIRAMISU+HAUSGEMACHT-011d53b1-1920w.png',
+    url: 'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=1920&q=80&auto=format&fit=crop',
     label: 'Dolci',
     sublabel: 'Hausgemachtes Tiramisù & mehr'
   },
   {
-    url: 'https://le-cdn.website-editor.net/s/42ae64c6c51b42deaa92ed40b139c583/dms3rep/multi/opt/Calamari_Naabucco-1920w.png',
+    url: 'https://images.unsplash.com/photo-1534482421-64566f976cfa?w=1920&q=80&auto=format&fit=crop',
     label: 'Meeresfrüchte',
     sublabel: 'Calamari, Scampi & Muscheln'
   },
   {
-    url: 'https://le-cdn.website-editor.net/s/42ae64c6c51b42deaa92ed40b139c583/dms3rep/multi/opt/Mio_Naabucco_Rigatoni-1920w.png',
+    url: 'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=1920&q=80&auto=format&fit=crop',
     label: 'Rigatoni',
     sublabel: 'Al Forno & alle Variationen'
   },
@@ -127,7 +127,7 @@ export default function Home() {
         <div className="intro__visual">
           <div className="intro__img-stack">
             <img
-              src="https://le-cdn.website-editor.net/s/42ae64c6c51b42deaa92ed40b139c583/dms3rep/multi/opt/007-f7db0a51-1920w.png"
+              src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920&q=80&auto=format&fit=crop"
               alt="Pizzeria Mio Naabucco"
               loading="lazy"
             />
