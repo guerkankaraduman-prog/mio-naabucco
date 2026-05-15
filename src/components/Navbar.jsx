@@ -32,7 +32,7 @@ export default function Navbar() {
         </nav>
 
         {/* optional: burger button falls vorhanden */}
-        <button className="navbar__toggle" onClick={() => setOpen(!open)}>
+        <button className="navbar__burger" onClick={() => setOpen(!open)}>
           ☰
         </button>
       </div>
