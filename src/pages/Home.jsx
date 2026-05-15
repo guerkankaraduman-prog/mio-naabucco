@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import './Home.css'
 
-import logo from '../assets/images/mio-logo.webp'
+import logo from '../assets/logo.webp'
 
 const LOGO = logo
 
