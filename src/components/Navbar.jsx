@@ -3,8 +3,6 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import './Navbar.css'
 import logo from '../assets/logo.webp'
 
-const LOGO = logo
-
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const { pathname } = useLocation()
@@ -16,8 +14,9 @@ export default function Navbar() {
   return (
     <header className={`navbar navbar--solid ${open ? 'navbar--open' : ''}`}>
       <div className="navbar__inner">
+
         <Link to="/" className="navbar__logo">
-          <img src={LOGO} alt="Mio Naabucco" />
+          <img src={logo} alt="Mio Naabucco" />
         </Link>
 
         <nav className={`navbar__nav ${open ? 'navbar__nav--visible' : ''}`}>
@@ -31,10 +30,10 @@ export default function Navbar() {
           </a>
         </nav>
 
-        {/* optional: burger button falls vorhanden */}
         <button className="navbar__burger" onClick={() => setOpen(!open)}>
           ☰
         </button>
+
       </div>
     </header>
   )
