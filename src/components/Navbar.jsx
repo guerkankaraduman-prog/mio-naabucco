@@ -6,22 +6,15 @@ import logo from '../assets/logo.webp'
 const LOGO = logo
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const { pathname } = useLocation()
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 60)
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  useEffect(() => { setOpen(false) }, [pathname])
-
-  const isHome = pathname === '/'
+    setOpen(false)
+  }, [pathname])
 
   return (
-    <header className={`navbar ${scrolled || !isHome ? 'navbar--solid' : ''} ${open ? 'navbar--open' : ''}`}>
+    <header className={`navbar navbar--solid ${open ? 'navbar--open' : ''}`}>
       <div className="navbar__inner">
         <Link to="/" className="navbar__logo">
           <img src={LOGO} alt="Mio Naabucco" />
@@ -32,10 +25,16 @@ export default function Navbar() {
           <NavLink to="/speisekarte">Speisekarte</NavLink>
           <NavLink to="/kontakt">Kontakt</NavLink>
           <NavLink to="/anfahrt">Anfahrt</NavLink>
+
           <a href="tel:+499435307373" className="navbar__cta btn btn-primary">
             <span>☎ Jetzt Bestellen</span>
           </a>
         </nav>
+
+        {/* optional: burger button falls vorhanden */}
+        <button className="navbar__toggle" onClick={() => setOpen(!open)}>
+          ☰
+        </button>
       </div>
     </header>
   )
