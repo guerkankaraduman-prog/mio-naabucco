@@ -1,206 +1,60 @@
 /* ================================================
-   MIO NAABUCCO — Global Design System
+   ANHÄNGEN AN: src/index.css  (ganz am Ende)
+   Behebt Navbar-Offset auf ALLEN Unterseiten
    ================================================ */
 
-:root {
-  --bg-deep:      #080705;
-  --bg-dark:      #0e0c09;
-  --bg-card:      #141109;
-  --bg-card-2:    #1a1610;
-  --gold:         #c9a055;
-  --gold-light:   #e2c07a;
-  --gold-dim:     #9a7a3f;
-  --cream:        #f2ead8;
-  --cream-dim:    #d4c9b0;
-  --red:          #8c1f1f;
-  --red-light:    #b52929;
-  --text:         #e8dfc6;
-  --text-muted:   #9a9080;
-  --border:       rgba(201,160,85,.18);
-  --border-light: rgba(201,160,85,.35);
-
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-body:    'Cormorant Garamond', Georgia, serif;
-  --font-ui:      'Jost', sans-serif;
-
-  --ease-silk:    cubic-bezier(.25,.46,.45,.94);
-  --ease-snap:    cubic-bezier(.23,1,.32,1);
-}
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-html { scroll-behavior: smooth; }
-
-body {
-  background: var(--bg-deep);
-  color: var(--text);
-  font-family: var(--font-body);
-  font-size: 18px;
-  line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-}
-
-/* ── Scrollbar ── */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--bg-dark); }
-::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 3px; }
-
-/* ── Selection ── */
-::selection { background: var(--gold); color: var(--bg-deep); }
-
-/* ── Links ── */
-a { color: inherit; text-decoration: none; }
-
-/* ── Images ── */
-img { max-width: 100%; display: block; }
-
-/* ── Typography Scale ── */
-.display-1 {
-  font-family: var(--font-display);
-  font-size: clamp(2.8rem, 7vw, 6.5rem);
-  font-weight: 400;
-  line-height: 1.05;
-  letter-spacing: -.02em;
-}
-.display-2 {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 4.5vw, 4rem);
-  font-weight: 400;
-  line-height: 1.1;
-  letter-spacing: -.015em;
-}
-.heading-1 {
-  font-family: var(--font-display);
-  font-size: clamp(1.6rem, 3vw, 2.6rem);
-  font-weight: 500;
-  line-height: 1.15;
-}
-.heading-2 {
-  font-family: var(--font-display);
-  font-size: clamp(1.3rem, 2.2vw, 1.9rem);
-  font-weight: 400;
-  line-height: 1.2;
-}
-.label {
-  font-family: var(--font-ui);
-  font-size: .72rem;
-  font-weight: 500;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: var(--gold);
-}
-.body-lg { font-size: 1.15rem; line-height: 1.75; }
-
-/* ── Ornament Divider ── */
-.ornament {
+/* ── PAGE HERO — Universal Fix alle Unterseiten ── */
+.page-hero {
+  position: relative;
+  min-height: 52vh;
   display: flex;
   align-items: center;
-  gap: 1rem;
-  color: var(--gold-dim);
-  font-size: 1.1rem;
-}
-.ornament::before,
-.ornament::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(to right, transparent, var(--gold-dim), transparent);
-}
-
-/* ── Gold Gradient Text ── */
-.gold-text {
-  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 50%, #a07a30 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* ── Section Container ── */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-.section { padding: 5rem 0; }
-.section-lg { padding: 7rem 0; }
-
-/* ── Buttons ── */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: .6rem;
-  font-family: var(--font-ui);
-  font-size: .8rem;
-  font-weight: 500;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-  padding: .9rem 2.2rem;
-  border: 1px solid var(--gold);
-  color: var(--gold);
-  background: transparent;
-  cursor: pointer;
-  transition: all .3s var(--ease-silk);
-  position: relative;
   overflow: hidden;
+  padding-top: 90px; /* ← Navbar-Höhe kompensieren */
 }
-.btn::before {
-  content: '';
+.page-hero__bg {
   position: absolute;
   inset: 0;
-  background: var(--gold);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform .35s var(--ease-snap);
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.04);
+  filter: brightness(.45);
 }
-.btn:hover::before { transform: scaleX(1); }
-.btn:hover { color: var(--bg-deep); }
-.btn span { position: relative; z-index: 1; }
-
-.btn-primary {
-  background: var(--gold);
-  color: var(--bg-deep);
-  border-color: var(--gold);
-}
-.btn-primary::before { background: var(--gold-light); }
-.btn-primary:hover { color: var(--bg-deep); }
-
-/* ── Fade-in animations ── */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-@keyframes lineGrow {
-  from { transform: scaleX(0); }
-  to   { transform: scaleX(1); }
-}
-.fade-up { animation: fadeUp .8s var(--ease-snap) both; }
-.fade-up-1 { animation-delay: .1s; }
-.fade-up-2 { animation-delay: .25s; }
-.fade-up-3 { animation-delay: .4s; }
-.fade-up-4 { animation-delay: .55s; }
-.fade-up-5 { animation-delay: .7s; }
-
-/* ── Noise Texture Overlay ── */
-.noise::after {
-  content: '';
+.page-hero__overlay {
   position: absolute;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events: none;
-  opacity: .4;
+  background: linear-gradient(
+    to bottom,
+    rgba(8,7,5,.4) 0%,
+    rgba(8,7,5,.75) 100%
+  );
+}
+.page-hero__content {
+  position: relative;
+  z-index: 2;
+  padding: 3rem 0;
+}
+.page-hero__content h1 em { color: var(--gold-light); font-style: italic; }
+
+/* ── KONTAKT MOBILE ── */
+@media (max-width: 600px) {
+  .kontakt-grid { gap: 2rem; }
+  .kontakt-card__row { padding: 1rem 1.1rem; gap: 1rem; }
+  .hours-row { padding: .75rem 1rem; font-size: .75rem; }
+  .hours-row__times { text-align: right; max-width: 55%; }
+  .takeaway-notice { padding: 1rem; gap: .75rem; }
+  .takeaway-notice span { font-size: 1.1rem; }
+  .contact-form { gap: 1.1rem; }
+  .form-group input,
+  .form-group textarea { padding: .75rem .9rem; font-size: .95rem; }
+  .kontakt-section { padding-top: 2.5rem; padding-bottom: 4rem; }
 }
 
-/* ── Page Transition ── */
-.page-enter { animation: fadeIn .4s var(--ease-silk) both; }
-
-/* ── Responsive ── */
-@media (max-width: 768px) {
-  .container { padding: 0 1.2rem; }
-  .section { padding: 3.5rem 0; }
-  .section-lg { padding: 5rem 0; }
+/* ── MOBILE: page-hero auf kleinen Screens ── */
+@media (max-width: 600px) {
+  .page-hero {
+    min-height: 38vh;
+    padding-top: 72px;
+  }
+  .page-hero__content { padding: 2rem 0; }
 }
