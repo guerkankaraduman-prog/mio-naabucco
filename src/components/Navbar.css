@@ -6,9 +6,9 @@
   padding: 1.6rem 0;
 }
 .navbar--solid {
-  background: rgba(8,7,5,.96);
+  background: white;
   backdrop-filter: blur(12px);
-  box-shadow: 0 1px 0 var(--border);
+  box-shadow: 0 1px 15px rgba(0,0,0,0.08);
   padding: 1rem 0;
 }
 .navbar__inner {
@@ -37,7 +37,7 @@
   font-weight: 400;
   letter-spacing: .18em;
   text-transform: uppercase;
-  color: var(--cream-dim);
+  color: #111;
   transition: color .25s;
   position: relative;
 }
@@ -50,10 +50,18 @@
   transform: scaleX(0);
   transition: transform .3s var(--ease-snap);
 }
-.navbar__nav a:hover,
-.navbar__nav a.active { color: var(--cream); }
+.navbar__nav a:hover {
+  text-shadow: 0 0 12px rgba(200, 169, 107, 0.25);
+}
+
+.navbar__nav a.active {
+  color: #c8a96b;
+}
+
 .navbar__nav a:hover::after,
-.navbar__nav a.active::after { transform: scaleX(1); }
+.navbar__nav a.active::after {
+  transform: scaleX(1);
+}
 
 .navbar__cta {
   padding: .65rem 1.5rem !important;
