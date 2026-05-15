@@ -83,20 +83,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── STRIP ── */}
-      <div className="strip">
-        <div className="strip__inner container">
-          <span>★★★★½</span>
-          <span>4,6 Sterne bei Google</span>
-          <span className="strip__dot">·</span>
-          <span>574 Bewertungen</span>
-          <span className="strip__dot">·</span>
-          <span>Über 23 Jahre Erfahrung</span>
-          <span className="strip__dot">·</span>
-          <span>Frische Zutaten täglich</span>
-        </div>
-      </div>
-
       {/* ── INTRO ── */}
       <section className="section-lg intro container">
         <div className="intro__text">
