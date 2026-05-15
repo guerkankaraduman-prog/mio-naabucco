@@ -1,27 +1,29 @@
 .navbar {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
-  transition: background .4s ease, box-shadow .4s ease, padding .4s ease;
+
   padding: 1.6rem 0;
   background: #ffffff;
+
   box-shadow: 0 1px 0 rgba(0,0,0,.08);
+
+  transition: background .4s ease, box-shadow .4s ease, padding .4s ease;
 }
 
 .navbar--solid {
-  background: white;
-  backdrop-filter: blur(12px);
-  box-shadow: 0 1px 15px rgba(0,0,0,0.08);
   background: #ffffff;
-  backdrop-filter: none;
-  box-shadow: 0 1px 0 rgba(0,0,0,.12);
-
+  box-shadow: 0 1px 15px rgba(0,0,0,0.08);
+  backdrop-filter: blur(12px);
 }
 
 .navbar__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   max-width: 1300px;
   margin: 0 auto;
   padding: 0 2rem;
@@ -32,7 +34,10 @@
   width: auto;
   transition: opacity .3s;
 }
-.navbar__logo:hover img { opacity: .8; }
+
+.navbar__logo:hover img {
+  opacity: .8;
+}
 
 .navbar__nav {
   display: flex;
@@ -46,30 +51,32 @@
   font-weight: 400;
   letter-spacing: .18em;
   text-transform: uppercase;
+
   color: #111;
-  transition: color .25s;
   position: relative;
+
+  transition: color .25s, text-shadow .25s;
 }
 
 .navbar__nav a::after {
   content: '';
   position: absolute;
-  bottom: -.3rem; left: 0; right: 0;
+  bottom: -.3rem;
+  left: 0;
+  right: 0;
+
   height: 1px;
   background: var(--gold);
+
   transform: scaleX(0);
   transition: transform .3s var(--ease-snap);
 }
 
 .navbar__nav a:hover {
+  color: var(--gold);
   text-shadow: 0 0 12px rgba(200, 169, 107, 0.25);
 }
 
-.navbar__nav a.active {
-  color: #c8a96b;
-
-
-.navbar__nav a:hover,
 .navbar__nav a.active {
   color: var(--gold);
 }
@@ -90,23 +97,33 @@
   border: none;
   cursor: pointer;
   padding: .4rem;
+
   color: #1a1a1a;
   font-size: 1.5rem;
 }
 
 @media (max-width: 768px) {
-  .navbar__toggle { display: block; }
+  .navbar__toggle {
+    display: block;
+  }
 
   .navbar__nav {
     display: none;
     position: absolute;
-    top: 100%; left: 0; right: 0;
+    top: 100%;
+    left: 0;
+    right: 0;
+
     background: #ffffff;
+
     flex-direction: column;
-    padding: 1.5rem 2rem;
     gap: 1.2rem;
+
+    padding: 1.5rem 2rem;
     box-shadow: 0 4px 12px rgba(0,0,0,.1);
   }
 
-  .navbar__nav--visible { display: flex; }
+  .navbar__nav--visible {
+    display: flex;
+  }
 }
