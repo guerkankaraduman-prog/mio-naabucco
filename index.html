@@ -70,12 +70,14 @@ button{cursor:pointer;font-family:inherit}
   position:relative;height:100vh;min-height:680px;
   display:flex;align-items:center;justify-content:center;overflow:hidden;
 }
-.hero-bg{
-  position:absolute;inset:0;
-  background:url('https://le-cdn.website-editor.net/s/42ae64c6c51b42deaa92ed40b139c583/dms3rep/multi/opt/IMG_3101-51edb471-1920w.png') center/cover no-repeat;
-  filter:brightness(.38) saturate(0.85);
-  transform:scale(1.04);
-  animation:subtleZoom 18s ease-in-out infinite alternate;
+.hero-bg {
+  background:
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('/images/restaurant.webp');
+    
+  background-size: cover;
+  background-position: center;
+}
 }
 @keyframes subtleZoom{from{transform:scale(1.04)}to{transform:scale(1.0)}}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.15) 0%,rgba(10,10,10,.5) 100%)}
