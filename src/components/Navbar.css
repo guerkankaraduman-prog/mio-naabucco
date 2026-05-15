@@ -9,16 +9,13 @@
 }
 
 .navbar--solid {
-<<<<<<< HEAD
   background: white;
   backdrop-filter: blur(12px);
   box-shadow: 0 1px 15px rgba(0,0,0,0.08);
-=======
   background: #ffffff;
   backdrop-filter: none;
   box-shadow: 0 1px 0 rgba(0,0,0,.12);
->>>>>>> 98d5c1c (Update Hero + RatingBar fix)
-  padding: 1rem 0;
+
 }
 
 .navbar__inner {
@@ -49,11 +46,7 @@
   font-weight: 400;
   letter-spacing: .18em;
   text-transform: uppercase;
-<<<<<<< HEAD
   color: #111;
-=======
-  color: #1a1a1a;
->>>>>>> 98d5c1c (Update Hero + RatingBar fix)
   transition: color .25s;
   position: relative;
 }
@@ -67,19 +60,18 @@
   transform: scaleX(0);
   transition: transform .3s var(--ease-snap);
 }
-<<<<<<< HEAD
+
 .navbar__nav a:hover {
   text-shadow: 0 0 12px rgba(200, 169, 107, 0.25);
 }
 
 .navbar__nav a.active {
   color: #c8a96b;
-=======
+
 
 .navbar__nav a:hover,
 .navbar__nav a.active {
   color: var(--gold);
->>>>>>> 98d5c1c (Update Hero + RatingBar fix)
 }
 
 .navbar__nav a:hover::after,
