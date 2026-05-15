@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import './Navbar.css'
+import logo from '../assets/logo.webp'
 
-const LOGO = 'https://le-cdn.website-editor.net/s/42ae64c6c51b42deaa92ed40b139c583/dms3rep/multi/opt/MIO_NAABUCCO_WHITE_LOGO-dbae7412-1920w.png'
+const LOGO = logo
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -35,14 +36,6 @@ export default function Navbar() {
             <span>☎ Jetzt Bestellen</span>
           </a>
         </nav>
-
-        <button
-          className={`navbar__burger ${open ? 'navbar__burger--active' : ''}`}
-          onClick={() => setOpen(o => !o)}
-          aria-label="Menü öffnen"
-        >
-          <span/><span/><span/>
-        </button>
       </div>
     </header>
   )

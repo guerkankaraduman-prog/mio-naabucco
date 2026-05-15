@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom'
 import './Home.css'
 
-import logo from '../assets/logo.webp'
 
-const LOGO = logo
+
 
 const GALLERY = [
   {
@@ -54,7 +53,6 @@ export default function Home() {
         <div className="hero__bg" />
         <div className="hero__overlay" />
         <div className="hero__content">
-          <img src={LOGO} alt="Mio Naabucco" className="hero__logo fade-up fade-up-1" />
           <div className="hero__divider fade-up fade-up-2">
             <span className="ornament"><span>✦</span></span>
           </div>
