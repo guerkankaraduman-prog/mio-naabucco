@@ -12,7 +12,7 @@
   position: absolute;
   inset: 0;
   background:
-    url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1800&q=80')
+    url('https://github.com/guerkankaraduman-prog/mio-naabucco/src/assets/restaurant.webp')
     center/cover no-repeat;
   transform: scale(1.06);
   animation: heroZoom 18s ease-in-out infinite alternate;
